@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Fri, 21 Jun 2024 23:56:14 +0000
+Description: my-repo
+Label: my-repo
+Origin: my-repo
+Suite: my-repo
+MD5Sum:
+ 0781afbd1d88ca98bec5d97c6b621f22              160 Release
+ 7d06301d016f7ce12460be973d5a3795             6622 main/binary-amd64/Packages
+ 5c0c26a7f1719ed61e95a1f6ffe045b8             2540 main/binary-amd64/Packages.bz2
+ e7575702b3c77e292f3017268caf1fec             2507 main/binary-amd64/Packages.gz
+ 6d7f6c846d3edc353e4a8e27a75454f7             2369 main/binary-amd64/Packages.lzma
+ c5a3aa543fc269ddf08703ee66d5665b             2416 main/binary-amd64/Packages.xz
+SHA1:
+ 43e41c0252afb8044ae049bc44ba92c0992dee9a              160 Release
+ 263552ac52eb95781f5dfe3da8d1685b3e699b41             6622 main/binary-amd64/Packages
+ 2d2ca0871f3a524779bd8813fc7695c751fad8b3             2540 main/binary-amd64/Packages.bz2
+ aba5ae1eb606ebebb5530011c24e9acdf8481e93             2507 main/binary-amd64/Packages.gz
+ bff46094dac4b313c3314413ba0c8b3d1777670d             2369 main/binary-amd64/Packages.lzma
+ 5783bb0331ded40ea6e1256c390172bbd079a3df             2416 main/binary-amd64/Packages.xz
+SHA256:
+ 1478befd936ad5cd5fc9c28603259f1caf85ff480285ced04b4028007a8c69e3              160 Release
+ 5e830ae411a63c97ab69b74e705ad0c806e627659602a6499a8c53961a2e1123             6622 main/binary-amd64/Packages
+ c67500b1a748acfea4035ce2be2f9bbcd99177a83c0e7622979b9b5a370c99f7             2540 main/binary-amd64/Packages.bz2
+ 32f926f960f08a1e54d75808bd23447f58d4422cf11e25a8ada08da7e6874d03             2507 main/binary-amd64/Packages.gz
+ d799419dfdec1324f1943458a6f466cbdfc40acc833a0d46b5b58917d10a600c             2369 main/binary-amd64/Packages.lzma
+ c2575f27b423a87c8f667299b83d457d7391fc198cc9f35002adcca9265a84bc             2416 main/binary-amd64/Packages.xz
+SHA512:
+ 30a1df7c83408911ffc03d772997a516417d2f73acb13e81f43aa9fef956b826dba011c44c85885dd5d900b480053fea5d0c76b9f6cafb40e35932e80ab4c63f              160 Release
+ 01630ac0162903a125c9b148fd4ab894deb7949282d30b61ca4c47c078e8b110bf13bba4769f12bc47e204334de31fbf7447dd979869793e542bec801399d75a             6622 main/binary-amd64/Packages
+ feb671226e58b591b48deeea10c049075ecf2b6c798c873ea5275b85e52c1e3c8cc53362ca402a0510760a36a97b94fbcd9eb6301fd553a9e3bd3934cbc27668             2540 main/binary-amd64/Packages.bz2
+ 21c0366203c78cfb88704345c801807f37efbf6be5fb918188ae4ab07336c102474b7a52669ded8ea0011ad11042e1e47713e06836ab4a58d95b8e2b2a84bd89             2507 main/binary-amd64/Packages.gz
+ 748a8ea701c167256165ee832cf0a6e4fb08a0239200afc28631b7c70e0e9778e2bac4bf8be8c7291d8a0ca944dc6bd8485f01a7faa2a99c6978107f4f9eecbe             2369 main/binary-amd64/Packages.lzma
+ ff934df21e7eeb344a0c94ea95b0e8ee2f3ce280e7d058d541434ea641ed5d6a82a61be24520bc7659c2e864688c52b7791db8c0eedd2528a4fda562d9e84f9f             2416 main/binary-amd64/Packages.xz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQTAVEXj1DMhQnxlGtENHNRJcbkHWwUCZnYTIwAKCRANHNRJcbkH
+W4XyAP0QpBKL3Tr/uwPzGPxsco23g7RZ/2tcJ1CoqAjq3SQZMAD8DbLmKiwBLiT2
+NBnjBXNwFNwIS7iufaOeiek0ygiMaAg=
+=dkEQ
+-----END PGP SIGNATURE-----

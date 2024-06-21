@@ -1,0 +1,49 @@
+server {
+  listen                443 ssl;
+  listen                [::]:443 ssl;
+  server_name           ohio.ajalo.com;
+  ssl_certificate       /etc/letsencrypt/live/ohio.ajalo.com/fullchain.pem;
+  ssl_certificate_key   /etc/letsencrypt/live/ohio.ajalo.com/privkey.pem;
+  ssl_early_data        on;
+
+  ssl_crl               /etc/nginx/pki-montana/crl.pem;
+  ssl_client_certificate /etc/nginx/pki-montana/ca.crt;
+  ssl_verify_client     on;
+
+  proxy_http_version    1.1;
+  proxy_cache_bypass    $http_upgrade;
+  proxy_ssl_server_name on;
+  proxy_connect_timeout 2s;
+  proxy_send_timeout    2s;
+  proxy_read_timeout    2s;
+  proxy_set_header      Host                $proxy_host;
+  proxy_set_header      Upgrade             $http_upgrade;
+  proxy_set_header      X-Real-IP           $proxy_protocol_addr;
+  proxy_set_header      Forwarded           $proxy_add_forwarded_setup_ohio;
+  proxy_set_header      X-Forwarded-For     $proxy_add_x_forwarded_for;
+  proxy_set_header      X-Forwarded-Proto   $scheme;
+  proxy_set_header      X-Forwarded-Host    $host;
+  proxy_set_header      X-Forwarded-Port    $server_port;
+  proxy_set_header      Early-Data          $ssl_early_data;
+
+#  if ( "$ssl_client_cn_setup_ohio" != "prometheus-monitor" ) { return 403; }
+
+  location / {
+    add_header Content-Type text/plain;
+    # return 200 "got cn: $ssl_client_cn";
+    return 200;
+  }
+
+  location /prometheus/ {
+    proxy_pass          http://127.0.0.1:9090;
+    proxy_set_header    Connection          $connection_upgrade_setup_ohio;
+  }
+  location = /prometheus-node {
+    proxy_pass          http://127.0.0.1:9100/prometheus-node;
+    proxy_set_header    Connection          $connection_upgrade_setup_ohio;
+  }
+  location = /prometheus-nginx {
+    proxy_pass          http://127.0.0.1:9113/prometheus-nginx;
+    proxy_set_header    Connection          $connection_upgrade_setup_ohio;
+  }
+}

@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:55:58 +0300
+Source: my-repo
+Binary: my-repo
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ my-repo    - Install my-repo apt repository
+Changes:
+ my-repo (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 5fd903bf887bb612c00e831d5829c697fc1e1d48 2098 my-repo_0.1-1_all.deb
+ 0c8a9eb9362c730db96eedfc3c967a83b4b5c2ac 5935 my-repo_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ 7fefb56359a5d1434d3b1b8c6809613fc080f033987e78fc333ed6b1d16a6673 2098 my-repo_0.1-1_all.deb
+ 42331534bc0e3c8278cf19c7ec980a957b4c395a5d6c5c58038c99b20cc739c4 5935 my-repo_0.1-1_amd64.buildinfo
+Files:
+ c3c38b2de2ba73d34be02300554dd15c 2098 unknown optional my-repo_0.1-1_all.deb
+ a9361e2a237abec36452670da5896192 5935 unknown optional my-repo_0.1-1_amd64.buildinfo

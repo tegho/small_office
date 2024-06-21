@@ -1,0 +1,3 @@
+package_url='https://github.com/tegho/small_office_vpn'
+package_short="Install my-repo apt repository"
+package_depends=''

@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:41:45 +0300
+Source: backup-to-ssh
+Binary: backup-to-ssh
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ backup-to-ssh - Backup to ssh host
+Changes:
+ backup-to-ssh (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 37f3c31ff3e8fee56c05ed08afa891812565793f 4830 backup-to-ssh_0.1-1_all.deb
+ 32a22aa8872733f0893019590769d3c7a6608d0a 5965 backup-to-ssh_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ 74626939644c2a61574b044b8277211db621c2fb0a289118387565d356786812 4830 backup-to-ssh_0.1-1_all.deb
+ 07fea23bd96f250a1683754eee81f84b66b7c4421c631fa6cb4856861670d8d3 5965 backup-to-ssh_0.1-1_amd64.buildinfo
+Files:
+ 608ff2c3e6cac550516a41fd47f2cd41 4830 unknown optional backup-to-ssh_0.1-1_all.deb
+ b27b7742e225100124c33880dc7f81ee 5965 unknown optional backup-to-ssh_0.1-1_amd64.buildinfo

@@ -1,0 +1,5 @@
+backup-to-ssh (0.1-1) jammy; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- admin <no@mail.plz>  Sat, 22 Jun 2024 02:41:45 +0300

@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup to ssh host (service)
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/libexec/backup-to-ssh/backup-to-ssh.sh
+
+[Install]
+WantedBy=multi-user.target

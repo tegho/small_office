@@ -1,0 +1,7 @@
+55b19b104ebc002b916e2b0891cbc17a  usr/bin/crypt-pki
+d2e0ddf89e40200e4fc4b313c193cc70  usr/share/crypt-pki/templates/android-api
+cfc07bfae54d9c8461a4677e3ce67c3a  usr/share/crypt-pki/templates/android-in
+1a53070f79efa2c47b3126b1d4d6d6a4  usr/share/crypt-pki/templates/win-api
+cfc07bfae54d9c8461a4677e3ce67c3a  usr/share/crypt-pki/templates/win-in
+cd6bd97ac6683e641134db968870ab67  usr/share/doc/crypt-pki/changelog.Debian.gz
+486b542f3bae79904e5217aac7fa4aad  usr/share/doc/crypt-pki/copyright

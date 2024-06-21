@@ -1,0 +1,15 @@
+# $SUBSTKEYNAME
+
+client
+dev-type        tun
+dev             tun
+remote          vpn.example.com 993 tcp
+auth            sha256
+remote-cert-tls server
+float
+verb 1
+
+$SUBSTCERT
+$SUBSTKEY
+$SUBSTCA
+$SUBSTTLS

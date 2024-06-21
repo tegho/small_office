@@ -1,0 +1,62 @@
+groups:
+- name: HostEnvironment
+  rules:
+
+  - alert: InstanceDown
+    expr: up == 0
+    annotations:
+      summary: "Instance {{ $labels.job }} down"
+      description: "{{ $labels.job }} down."
+  - alert: FreeRam
+    expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 10
+    for: 2m
+    annotations:
+      title: "Host is out of memory (instance {{ $labels.job }})"
+      description: "Node memory is filling up (< 10% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+  - alert: TooMuchSwap
+    expr: rate(node_vmstat_pgmajfault[2m]) > 1000
+    for: 2m
+    annotations:
+      title: "Host is swapping (instance {{ $labels.job }})"
+      description: "Node swap is too high (> 1000 major faults per sec)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+  - alert: CpuOverwhelmed
+    expr: 100- (avg by(job) (irate(node_cpu_seconds_total{mode="idle"}[2m])) *100) > 80
+    for: 2m
+    annotations:
+      title: "Host is too busy (instance {{ $labels.job }})"
+      description: "Node CPU is overwhelmed (> 80% for 2 min)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+  - alert: FreeSpace
+    expr: 100* node_filesystem_avail_bytes / node_filesystem_size_bytes < 10 AND node_filesystem_readonly == 0 AND node_filesystem_files > 0
+    annotations:
+      title: "Host is out of free space (instance {{ $labels.job }})"
+      description: "Node free space is runing out (< 10% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+  - alert: FreeInodes
+    expr: 100* node_filesystem_files_free / node_filesystem_files < 30 AND node_filesystem_readonly == 0 AND node_filesystem_files > 0
+    annotations:
+      title: "Host is out of free inodes (instance {{ $labels.job }})"
+      description: "Node free inodes are runing out (< 30% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+  - alert: NginxHighUnhandled
+    expr: (rate(nginx_connections_accepted[1m]) - rate(nginx_connections_handled[1m])) / rate(nginx_connections_accepted[1m]) *100 > 10
+    annotations:
+      summary: "Unhandled connections rate is over 10% on instance {{ $labels.job }} down"
+      description: "Unhandled connections rate is {{ $value }} in last 1m time frame."
+  - alert: OpenvpnDown
+    expr: node_systemd_unit_state{job="vpn-node",name="openvpn-server@vpn1.service",state="active"} != 1
+    annotations:
+      title: "Openvpn (vpn1) is down (instance {{ $labels.job }})"
+      description: "Openvpn (vpn1) is down (instance {{ $labels.job }})"
+  - alert: IpsecDown
+    expr: node_systemd_unit_state{job="vpn-node",name="strongswan.service",state="active"} != 1
+    annotations:
+      title: "Ipsec is down (instance {{ $labels.job }})"
+      description: "Ipsec is down (instance {{ $labels.job }})"
+  - alert: CrlTooOld
+    expr: time() - crl_fetch_time > 1260
+    annotations:
+      summary: "Cannot fetch CRL for at least 21m on instance {{ $labels.job }}"
+      description: "Last time CRL has been succesfully fetched {{ $value | humanizeDuration }} ago"
+  - alert: BackupTooOld
+    expr: time() - backup_to_ssh > 87300
+    annotations:
+      summary: "Last successfull backup completed later than 24h ago on instance {{ $labels.job }}"
+      description: "Last successfull backup {{ $value | humanizeDuration }} ago"

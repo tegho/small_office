@@ -1,0 +1,18 @@
+Source: setup-ohio
+Section: unknown
+Priority: optional
+Maintainer: admin <no@mail.plz>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://github.com/tegho/small_office_vpn
+#Vcs-Browser: https://salsa.debian.org/debian/setup-ohio
+#Vcs-Git: https://salsa.debian.org/debian/setup-ohio.git
+Rules-Requires-Root: no
+
+Package: setup-ohio
+Architecture: all
+Depends: systemd,iptables,ipset,ddns-afraid-org,prometheus,prometheus-alertmanager,nginx,prometheus-nginx-exporter,prometheus-node-exporter,exim4,whois,openssl,backup-to-ssh
+Description: Install ohio.ajalo.com.
+ multiline
+ description
+Breaks: setup-montana, setup-nevada

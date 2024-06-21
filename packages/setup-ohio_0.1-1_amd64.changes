@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:48:41 +0300
+Source: setup-ohio
+Binary: setup-ohio
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ setup-ohio - Install ohio.ajalo.com.
+Changes:
+ setup-ohio (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 09d5aea1f694cabc771966b6c842b3948d5364b7 10380 setup-ohio_0.1-1_all.deb
+ a3989a38661e106d5aeb0b2c68dec00713d5a423 5953 setup-ohio_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ 4f2d32f488054206a6cd8232f9d29bf826a270e74db7fc081d22e86bbe416bf5 10380 setup-ohio_0.1-1_all.deb
+ a7403e6c4cd4701de838033f19136c96409a4ecea70c039b25ac5a5b9c6c795e 5953 setup-ohio_0.1-1_amd64.buildinfo
+Files:
+ c6a24fcfb1e94784402c73f101e84458 10380 unknown optional setup-ohio_0.1-1_all.deb
+ e0d340dc258eaefdf25218980b1facb5 5953 unknown optional setup-ohio_0.1-1_amd64.buildinfo

@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:47:37 +0300
+Source: setup-montana
+Binary: setup-montana
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ setup-montana - Setup  montana.ajalo.com.
+Changes:
+ setup-montana (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ e9f39d3f50ad63d2b8b81f92d151ee21aba6b6c1 6864 setup-montana_0.1-1_all.deb
+ 47e5f6ec32b9bc51b4fac5c9ad66f93a49aedc81 5965 setup-montana_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ 07aac114e1679d39f9ef720625f2485e1e677ccbcd7a19c5c4b2e1a9a86f56d0 6864 setup-montana_0.1-1_all.deb
+ 19cbba07aa959ce48c3bdcaddef1372428e650aa5caacbe0095011f93e0a49d1 5965 setup-montana_0.1-1_amd64.buildinfo
+Files:
+ f1c7b541af14677d0ab0d45be2ddf0af 6864 unknown optional setup-montana_0.1-1_all.deb
+ 2d9588db88c4053db53b1f4e294acda4 5965 unknown optional setup-montana_0.1-1_amd64.buildinfo

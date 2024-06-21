@@ -1,0 +1,8 @@
+/etc/backup-to-ssh.d/montana-etc.conf
+/etc/backup-to-ssh.d/pki.conf
+/etc/iptables/filter.sh
+/etc/nginx/conf.d/setup_montana.conf
+/etc/nginx/sites-available/crl
+/etc/nginx/sites-available/prometheus
+/etc/nginx/sites-available/stat
+/etc/systemd/system/iptables.service

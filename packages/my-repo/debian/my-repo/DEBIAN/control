@@ -1,0 +1,11 @@
+Package: my-repo
+Version: 0.1-1
+Architecture: all
+Maintainer: admin <no@mail.plz>
+Installed-Size: 9
+Section: unknown
+Priority: optional
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install my-repo apt repository
+ multiline
+ description

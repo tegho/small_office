@@ -1,0 +1,13 @@
+server {
+  listen 127.0.0.1:8080 default_server;
+  listen [::1]:8080 default_server;
+  server_name _;
+
+  location / { return 404; access_log off; log_not_found off; }
+  location = /stub_status {
+    stub_status;
+    allow 127.0.0.0/8;
+    allow ::1/128;
+    deny all;
+  }
+}

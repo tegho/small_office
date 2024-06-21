@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+case "$1" in
+    configure)
+        find /etc/backup-to-ssh.d -type f -exec chmod -f 640 '{}' \;
+        find /etc/backup-to-ssh.d -type d -exec chmod -f 750 '{}' \;
+        find /etc/backup-to-ssh.keys -type f -exec chmod -f 600 '{}' \;
+        find /etc/backup-to-ssh.keys -type d -exec chmod -f 700 '{}' \;
+
+        systemctl daemon-reload && \
+        deb-systemd-invoke enable backup-to-ssh.service && \
+        deb-systemd-invoke enable backup-to-ssh.timer && \
+        deb-systemd-invoke restart backup-to-ssh.service && \
+        deb-systemd-invoke restart backup-to-ssh.timer
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+exit 0

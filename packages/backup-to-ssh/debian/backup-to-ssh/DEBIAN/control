@@ -1,0 +1,12 @@
+Package: backup-to-ssh
+Version: 0.1-1
+Architecture: all
+Maintainer: admin <no@mail.plz>
+Installed-Size: 30
+Depends: systemd, ssh
+Section: unknown
+Priority: optional
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Backup to ssh host
+ multiline
+ description

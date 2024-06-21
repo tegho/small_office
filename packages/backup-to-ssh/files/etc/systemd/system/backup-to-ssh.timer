@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup to ssh host (timer)
+
+[Timer]
+OnCalendar=0:11:0
+RandomizedDelaySec=5m
+
+[Install]
+WantedBy=timers.target

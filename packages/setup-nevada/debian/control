@@ -1,0 +1,18 @@
+Source: setup-nevada
+Section: unknown
+Priority: optional
+Maintainer: admin <no@mail.plz>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://github.com/tegho/small_office_vpn
+#Vcs-Browser: https://salsa.debian.org/debian/setup-nevada
+#Vcs-Git: https://salsa.debian.org/debian/setup-nevada.git
+Rules-Requires-Root: no
+
+Package: setup-nevada
+Architecture: all
+Depends: systemd,iptables,ipset,openvpn,nginx,zip,curl,charon-systemd,libcharon-extauth-plugins,libcharon-extra-plugins,libstrongswan,libstrongswan-standard-plugins,libstrongswan-extra-plugins,strongswan-libcharon,strongswan-swanctl,bind9,dnsutils,ddns-afraid-org,prometheus-nginx-exporter,prometheus-node-exporter,docker-ce,docker-ce-cli,containerd.io,docker-buildx-plugin,docker-compose-plugin,backup-to-ssh
+Description: Install nevada.ajalo.com.
+ multiline
+ description
+Breaks: setup-montana, setup-ohio

@@ -1,0 +1,4 @@
+/etc/backup-to-ssh.d/README
+/etc/backup-to-ssh.d/example.conf
+/etc/systemd/system/backup-to-ssh.service
+/etc/systemd/system/backup-to-ssh.timer

@@ -1,0 +1,12 @@
+Package: ddns-afraid-org
+Version: 0.1-1
+Architecture: all
+Maintainer: admin <no@mail.plz>
+Installed-Size: 25
+Depends: systemd, curl | wget
+Section: unknown
+Priority: optional
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Updates DDNS records on afraid.org
+ multiline
+ description

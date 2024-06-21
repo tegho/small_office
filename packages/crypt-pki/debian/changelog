@@ -1,0 +1,5 @@
+crypt-pki (0.1-1) jammy; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- admin <no@mail.plz>  Sat, 22 Jun 2024 02:43:34 +0300

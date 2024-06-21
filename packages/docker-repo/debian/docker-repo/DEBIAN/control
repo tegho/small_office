@@ -1,0 +1,13 @@
+Package: docker-repo
+Version: 0.1-1
+Architecture: all
+Maintainer: admin <no@mail.plz>
+Installed-Size: 12
+Depends: ca-certificates, curl
+Breaks: docker-compose, docker-doc, docker.io, podman-docker
+Section: unknown
+Priority: optional
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install docker repo
+ multiline
+ description

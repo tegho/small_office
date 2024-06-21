@@ -1,0 +1,92 @@
+#!/bin/sh
+
+set -e
+case "$1" in
+  configure)
+
+    useradd -m -U -s /bin/bash remotebackup-office || /bin/true
+    useradd -m -U -s /bin/bash remotebackup-pki || /bin/true
+    useradd -m -U -s /bin/bash remotebackup-vpn || /bin/true
+
+    # ddns
+    [ ! -f "/etc/ddns-afraid-org.d/ohio.ajalo.com.conf" ] && touch "/etc/ddns-afraid-org.d/ohio.ajalo.com.conf"
+    find /etc/ddns-afraid-org.d -type f -exec chmod -f 640 '{}' \;
+    find /etc/ddns-afraid-org.d -type d -exec chmod -f 750 '{}' \;
+    # deb-systemd-invoke restart ddns-afraid-org.service
+
+    # nginx
+    touch /etc/nginx/pki-montana/ca.crt
+    touch /etc/nginx/pki-montana/crl.pem
+    ln -fs /etc/nginx/sites-available/stat /etc/nginx/sites-enabled/stat
+    ln -fs /etc/nginx/sites-available/prometheus-mon /etc/nginx/sites-enabled/prometheus-mon
+    rm -f /etc/nginx/sites-enabled/default
+    deb-systemd-invoke restart nginx || /bin/true
+
+    # CRL updater
+    deb-systemd-invoke enable montana-crl.service && \
+      deb-systemd-invoke enable montana-crl.timer && \
+      deb-systemd-invoke restart montana-crl.service && \
+      deb-systemd-invoke restart montana-crl.timer
+
+    # iptables
+    deb-systemd-invoke enable iptables.service && \
+      deb-systemd-invoke restart iptables.service
+
+    # exim
+    dpkg-divert --package setup-ohio --divert /etc/exim4/update-exim4.conf.conf-original --rename --add /etc/exim4/update-exim4.conf.conf
+    [ ! -e /etc/exim4/update-exim4.conf.conf -o -L /etc/exim4/update-exim4.conf.conf ] && ln -sf /etc/exim4/update-exim4.conf.conf-setup-ohio /etc/exim4/update-exim4.conf.conf
+    chmod -f 640 /etc/exim4/passwd /etc/exim4/passwd.client && \
+      chown -f 0:Debian-exim /etc/exim4/passwd /etc/exim4/passwd.client
+    [ ! -e /etc/exim4/email-addresses -o -L /etc/exim4/email-addresses ] && ln -sf ../email-addresses /etc/exim4/email-addresses
+    [ ! -e /etc/exim4/mailname -o -L /etc/exim4/mailname ] && ln -sf ../mailname /etc/exim4/mailname
+    deb-systemd-invoke restart exim4
+
+    # tune prometheus
+    dpkg-divert --package setup-ohio --divert /etc/prometheus/prometheus.yml-original --rename --add /etc/prometheus/prometheus.yml
+    [ ! -e /etc/prometheus/prometheus.yml -o -L /etc/prometheus/prometheus.yml ] && ln -sf /etc/prometheus/prometheus.yml-setup-ohio /etc/prometheus/prometheus.yml
+    dpkg-divert --package setup-ohio --divert /etc/prometheus/alertmanager.yml-original --rename --add /etc/prometheus/alertmanager.yml
+    [ ! -e /etc/prometheus/alertmanager.yml -o -L /etc/prometheus/alertmanager.yml ] && ln -sf /etc/prometheus/alertmanager.yml-setup-ohio /etc/prometheus/alertmanager.yml
+
+#    sed -i 's!^[\t ]*ARGS=".*$!ARGS="--web.listen-address=127.0.0.1:9090 --web.external-url=/prometheus/"!' /etc/default/prometheus
+#    sed -i 's!^[\t ]*ARGS=".*$!ARGS="-web.listen-address 127.0.0.1:9113 -web.telemetry-path /prometheus-nginx"!' /etc/default/prometheus-nginx-exporter
+#    sed -i 's!^[\t ]*ARGS=".*$!ARGS="--web.listen-address=127.0.0.1:9100 --web.telemetry-path=/prometheus-node"!' /etc/default/prometheus-node-exporter
+#    sed -i 's!^[\t ]*ARGS=".*$!ARGS="--web.listen-address=127.0.0.1:9093 --cluster.listen-address=127.0.0.1:9094"!' /etc/default/prometheus-alertmanager
+
+    sed -i 's!^[\t ]*ARGS=".*$!ARGS="--web.external-url=/prometheus/"!' /etc/default/prometheus
+    sed -i 's!^[\t ]*ARGS=".*$!ARGS="-web.telemetry-path /prometheus-nginx"!' /etc/default/prometheus-nginx-exporter
+    sed -i 's!^[\t ]*ARGS=".*$!ARGS="--web.telemetry-path=/prometheus-node"!' /etc/default/prometheus-node-exporter
+
+
+    chown -R 0:prometheus /etc/prometheus/pki-montana && \
+      chmod -f 750 /etc/prometheus/pki-montana && \
+      chmod -f 640 /etc/prometheus/pki-montana/*
+    deb-systemd-invoke restart prometheus-node-exporter
+    deb-systemd-invoke restart prometheus-nginx-exporter
+    deb-systemd-invoke restart prometheus
+
+    # add mail user to exim and alertmanager
+    user="user"
+    passwd=$(openssl rand -hex 8)
+    conf="/etc/exim4/passwd"
+    if [ -f "$conf" ] && [ -w "$conf" ] ; then
+      grep -qs "^[ \t]*$user:" "$conf" || echo "$user:"$(echo -n "$passwd" |mkpasswd -sm sha512crypt) >> "$conf"
+    fi
+    conf="/etc/prometheus/alertmanager.yml"
+    if [ -f "$conf" ] && [ -w "$conf" ] ; then
+      grep -qs "^  smtp_auth_password[ \t]*:" "$conf" || sed --follow-symlinks -i "/^  smtp_auth_username[ \t]*/a \ \ smtp_auth_password: \'$passwd\'" "$conf"
+    fi
+    deb-systemd-invoke restart prometheus-alertmanager
+
+
+    ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

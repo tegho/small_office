@@ -1,0 +1,45 @@
+#!/bin/sh
+
+set -e
+case "$1" in
+    remove|upgrade|deconfigure)
+
+      # nginx
+      rm -f /etc/nginx/sites-enabled/stat
+      rm -f /etc/nginx/sites-enabled/prometheus-mon
+      deb-systemd-invoke status nginx >/dev/null 2>&1 && deb-systemd-invoke restart nginx
+
+      # CRL updater
+      deb-systemd-invoke disable montana-crl.timer && \
+        deb-systemd-invoke stop montana-crl.timer && \
+        deb-systemd-invoke disable montana-crl.service && \
+        deb-systemd-invoke stop montana-crl.service
+
+      # iptables
+      deb-systemd-invoke disable iptables.service
+      echo "Check iptables rules manually"
+
+      # prometheus
+      [ -L /etc/prometheus/prometheus.yml ] && rm -f /etc/prometheus/prometheus.yml
+      dpkg-divert --package setup-ohio --divert /etc/prometheus/prometheus.yml-original --rename --remove /etc/prometheus/prometheus.yml
+
+      [ -L /etc/prometheus/alertmanager.yml ] && rm -f /etc/prometheus/alertmanager.yml
+      dpkg-divert --package setup-ohio --divert /etc/prometheus/alertmanager.yml-original --rename --remove /etc/prometheus/alertmanager.yml
+
+      # exim
+      [ -L /etc/exim4/update-exim4.conf.conf ] && rm -f /etc/exim4/update-exim4.conf.conf
+      dpkg-divert --package setup-ohio --divert /etc/exim4/update-exim4.conf.conf-original --rename --remove /etc/exim4/update-exim4.conf.conf
+      rm -f /etc/exim4/email-addresses /etc/exim4/mailname
+      deb-systemd-invoke restart exim4
+
+      ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+exit 0

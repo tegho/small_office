@@ -1,0 +1,3 @@
+package_url='https://github.com/tegho/small_office_vpn'
+package_short="Install ohio.ajalo.com."
+package_depends="systemd,iptables,ipset,ddns-afraid-org,prometheus,prometheus-alertmanager,nginx,prometheus-nginx-exporter,prometheus-node-exporter,exim4,whois,openssl,backup-to-ssh"

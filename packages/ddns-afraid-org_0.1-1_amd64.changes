@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:44:02 +0300
+Source: ddns-afraid-org
+Binary: ddns-afraid-org
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ ddns-afraid-org - Updates DDNS records on afraid.org
+Changes:
+ ddns-afraid-org (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ fe6ab62e34a71c76f11d115b3ab6c186b3dfa3e8 3734 ddns-afraid-org_0.1-1_all.deb
+ be464b9b74e5dfb8ea4ac3932bd0a335c59aef07 5975 ddns-afraid-org_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ f77f258a7ba0e266437e495bc9a9c0a15487fd0f4a1b6f607cbf1aaa103bc639 3734 ddns-afraid-org_0.1-1_all.deb
+ cc05499b241ff06b741846a0d7f08d377fe7ebc900f3f2a9ee3cc072af9bed0d 5975 ddns-afraid-org_0.1-1_amd64.buildinfo
+Files:
+ 0d95d0f46c1caf9fade5845d6485981e 3734 unknown optional ddns-afraid-org_0.1-1_all.deb
+ ba21a6aa018966518065096ae3bc8ae1 5975 unknown optional ddns-afraid-org_0.1-1_amd64.buildinfo

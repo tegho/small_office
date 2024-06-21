@@ -1,0 +1,58 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package backup-to-ssh
+dpkg-buildpackage: info: source version 0.1-1
+dpkg-buildpackage: info: source distribution jammy
+dpkg-buildpackage: info: source changed by admin <no@mail.plz>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+   dh_clean
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+   dh_auto_install --destdir=debian/backup-to-ssh/
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/root/mm/small_office_vpn/packages/backup-to-ssh'
+dh_builddeb -- -Zgzip
+dpkg-deb: building package 'backup-to-ssh' in '../backup-to-ssh_0.1-1_all.deb'.
+make[1]: Leaving directory '/root/mm/small_office_vpn/packages/backup-to-ssh'
+ dpkg-genbuildinfo --build=binary -O../backup-to-ssh_0.1-1_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../backup-to-ssh_0.1-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian backup-to-ssh_0.1-1_amd64.changes ...
+running with root privileges is not recommended!
+E: backup-to-ssh: bogus-mail-host Maintainer no@mail.plz
+E: backup-to-ssh changes: bogus-mail-host Changed-By no@mail.plz
+E: backup-to-ssh changes: bogus-mail-host Maintainer no@mail.plz
+E: backup-to-ssh: bogus-mail-host-in-debian-changelog no@mail.plz version 0.1-1 (line 1)
+E: backup-to-ssh: changelog-is-dh_make-template
+E: backup-to-ssh: copyright-contains-dh_make-todo-boilerplate
+E: backup-to-ssh: helper-templates-in-copyright
+E: backup-to-ssh: section-is-dh_make-template
+E: backup-to-ssh: systemd-service-in-odd-location [etc/systemd/system/backup-to-ssh.service]
+W: backup-to-ssh: copyright-has-url-from-dh_make-boilerplate
+W: backup-to-ssh: initial-upload-closes-no-bugs
+W: backup-to-ssh: recursive-privilege-change "find /etc/backup-to-ssh.d -type d -exec chmod" [postinst:7]
+W: backup-to-ssh: recursive-privilege-change "find /etc/backup-to-ssh.d -type f -exec chmod" [postinst:6]
+W: backup-to-ssh: recursive-privilege-change "find /etc/backup-to-ssh.keys -type d -exec chmod" [postinst:9]
+W: backup-to-ssh: recursive-privilege-change "find /etc/backup-to-ssh.keys -type f -exec chmod" [postinst:8]
+W: backup-to-ssh: wrong-bug-number-in-closes #nnnn in the installed changelog (line 3)
+Finished running lintian.

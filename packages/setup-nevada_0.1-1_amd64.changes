@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:48:09 +0300
+Source: setup-nevada
+Binary: setup-nevada
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ setup-nevada - Install nevada.ajalo.com.
+Changes:
+ setup-nevada (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 9123b03eb0a9728b667b63a5da57a6d3008d3cb4 12188 setup-nevada_0.1-1_all.deb
+ 091d559671faca91fbcd9757bcb67f6b3f095331 5963 setup-nevada_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ e4abd1c6d0c9ed0b4ee03dea1a46b4a76b2004430766459e4718edd357612587 12188 setup-nevada_0.1-1_all.deb
+ 31146a5b1937aa22d39d49cd3a3542b6fa29f8eb9424bca321911a8fa3c9716d 5963 setup-nevada_0.1-1_amd64.buildinfo
+Files:
+ b3a97e0a89d2cc601697a5afea43c241 12188 unknown optional setup-nevada_0.1-1_all.deb
+ 7288f430a0b36c71314b38ef8d483810 5963 unknown optional setup-nevada_0.1-1_amd64.buildinfo

@@ -1,0 +1,8 @@
+dc_use_split_config='true'
+dc_eximconfig_configtype='smarthost'
+dc_minimaldns='false'
+dc_hide_mailname='true'
+dc_mailname_in_oh='true'
+# CFILEMODE='644'
+# dc_relay_nets='192.168.0.0/16; 172.16.0.0/12;'
+dc_other_hostnames='office'

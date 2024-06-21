@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Sat, 22 Jun 2024 02:42:46 +0300
+Source: certbot-snap-assist
+Binary: certbot-snap-assist
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1-1
+Distribution: jammy
+Urgency: medium
+Maintainer: admin <no@mail.plz>
+Changed-By: admin <no@mail.plz>
+Description:
+ certbot-snap-assist - Helps to setup certbot
+Changes:
+ certbot-snap-assist (0.1-1) jammy; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 11e9cce30f4287b4531cb4143f3266332a61d600 2432 certbot-snap-assist_0.1-1_all.deb
+ 62ca4cf595cf10fbb6e93a1f3e69f00234345b7a 5995 certbot-snap-assist_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ bc4f8eb92f735e8eac71517586ea6f67f41840f7ac0f9745365727d1e62333e6 2432 certbot-snap-assist_0.1-1_all.deb
+ faf34592eac33f9b65a61b754b58244e108bc831da99b203ea8152afc6bc9932 5995 certbot-snap-assist_0.1-1_amd64.buildinfo
+Files:
+ e32edaf247d0cfc830d25dac5a8d1194 2432 unknown optional certbot-snap-assist_0.1-1_all.deb
+ f71da53a61d0af024a70b07107d7c2fc 5995 unknown optional certbot-snap-assist_0.1-1_amd64.buildinfo

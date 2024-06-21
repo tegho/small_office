@@ -1,0 +1,4 @@
+75c12682b9e2c1e7e8982aca59ad5796  usr/libexec/backup-to-ssh/backup-to-ssh.sh
+6a7984583439a3c8553be4add6231487  usr/share/backup-to-ssh/import-ssh-priv.sh
+0e7a9d21777e49191a405a60f411c798  usr/share/doc/backup-to-ssh/changelog.Debian.gz
+89be9662fd8d04c70803790ffbbc418d  usr/share/doc/backup-to-ssh/copyright

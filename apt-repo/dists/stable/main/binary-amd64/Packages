@@ -1,0 +1,175 @@
+Package: backup-to-ssh
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 30
+Depends: systemd, ssh
+Filename: pool/main/backup-to-ssh_0.1-1_all.deb
+Size: 4830
+MD5sum: 608ff2c3e6cac550516a41fd47f2cd41
+SHA1: 37f3c31ff3e8fee56c05ed08afa891812565793f
+SHA256: 74626939644c2a61574b044b8277211db621c2fb0a289118387565d356786812
+SHA512: 1e571bb926574723ce486070e0bb6938163d89f965bf5475d64e846489cdaeb779e7d48ef9331689a46230a5c162b6f71a015778e7e66d4c4af6b0b8399e0d9f
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Backup to ssh host
+ multiline
+ description
+
+Package: certbot-snap-assist
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 11
+Depends: snapd
+Breaks: certbot
+Filename: pool/main/certbot-snap-assist_0.1-1_all.deb
+Size: 2432
+MD5sum: e32edaf247d0cfc830d25dac5a8d1194
+SHA1: 11e9cce30f4287b4531cb4143f3266332a61d600
+SHA256: bc4f8eb92f735e8eac71517586ea6f67f41840f7ac0f9745365727d1e62333e6
+SHA512: 5943ccf52585350868a74a9238c35ab3008951ccf2831804471abb34a0c15de3c8dc2af29b2bbfb0ed71a1b89e3740d85bc44481da8c810594714f0268193704
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Helps to setup certbot
+ multiline
+ description
+
+Package: crypt-pki
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 52
+Depends: easy-rsa, cryptsetup
+Filename: pool/main/crypt-pki_0.1-1_all.deb
+Size: 9528
+MD5sum: 5bc92dfc33c00dddce27a6c4c9a3b16e
+SHA1: a2af924710d122df5d8358ac6687296298b19ac0
+SHA256: ee3182f0d91ef946b97f05a35924530060c4ea76a731c7dce5651771957a1f2a
+SHA512: b6c88eac51b7bdbfb0455443a3af6e8922076afcd969a590bc35248c3a4871be1e9fa370d458b8409780bf93fb38ac01bab1624c0f5cbdd433b537c6dddfaffe
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install easy-rsa, creates PKI structure and helpers
+ multiline
+ description
+
+Package: ddns-afraid-org
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 25
+Depends: systemd, curl | wget
+Filename: pool/main/ddns-afraid-org_0.1-1_all.deb
+Size: 3734
+MD5sum: 0d95d0f46c1caf9fade5845d6485981e
+SHA1: fe6ab62e34a71c76f11d115b3ab6c186b3dfa3e8
+SHA256: f77f258a7ba0e266437e495bc9a9c0a15487fd0f4a1b6f607cbf1aaa103bc639
+SHA512: 60f00245f2e2e818ecc46222d487dfc96c0869c144967d04ee09eba4c16d7c8150183ad1e41075a134b7cc05735072b3a35a67eb36211f2995196dd0b194341b
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Updates DDNS records on afraid.org
+ multiline
+ description
+
+Package: docker-repo
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 12
+Depends: ca-certificates, curl
+Breaks: docker-compose, docker-doc, docker.io, podman-docker
+Filename: pool/main/docker-repo_0.1-1_all.deb
+Size: 2630
+MD5sum: 17d90c8f173039437daa6676258fabfb
+SHA1: d741dd46a12190bba0ca0c226fa61a46ceced9f0
+SHA256: 180c90fbc7736918e854ad436f4277bdec7c96ce3c3a19a4def2a9b8a33462fd
+SHA512: ab5f90e6fe3b46a2f7658f278e976f2895dd2d03f4daf818f8808422b09524dbccd5a6f55936764d8d253d287a96f5ecb9fabc60a4d5ed7e05c1c85af4ede670
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install docker repo
+ multiline
+ description
+
+Package: my-repo
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 9
+Filename: pool/main/my-repo_0.1-1_all.deb
+Size: 2098
+MD5sum: c3c38b2de2ba73d34be02300554dd15c
+SHA1: 5fd903bf887bb612c00e831d5829c697fc1e1d48
+SHA256: 7fefb56359a5d1434d3b1b8c6809613fc080f033987e78fc333ed6b1d16a6673
+SHA512: ce63de3ce75ebc0dd947199aa0b45b0d8292a7991058f0f243b93d5de01345eeb8c3c76f2c5e0ab5850db17ec9976ada55a6ee771ca79cdf2896cf9a261bca60
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install my-repo apt repository
+ multiline
+ description
+
+Package: setup-montana
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 46
+Depends: crypt-pki, openvpn, nginx, ddns-afraid-org, zip, iptables, ipset, prometheus-nginx-exporter, prometheus-node-exporter, backup-to-ssh
+Breaks: setup-nevada, setup-ohio
+Filename: pool/main/setup-montana_0.1-1_all.deb
+Size: 6864
+MD5sum: f1c7b541af14677d0ab0d45be2ddf0af
+SHA1: e9f39d3f50ad63d2b8b81f92d151ee21aba6b6c1
+SHA256: 07aac114e1679d39f9ef720625f2485e1e677ccbcd7a19c5c4b2e1a9a86f56d0
+SHA512: 69f0f422021a0ee0a719af2ba3ee3b28865054120c090d57600a7542f2c89c3ddc0d822982bd62ba8fd128456ad8caf25a391a616f0c89196b5b13a97c8b7eb6
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Setup  montana.ajalo.com.
+ multiline
+ description
+
+Package: setup-nevada
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 91
+Depends: systemd, iptables, ipset, openvpn, nginx, zip, curl, charon-systemd, libcharon-extauth-plugins, libcharon-extra-plugins, libstrongswan, libstrongswan-standard-plugins, libstrongswan-extra-plugins, strongswan-libcharon, strongswan-swanctl, bind9, dnsutils, ddns-afraid-org, prometheus-nginx-exporter, prometheus-node-exporter, docker-ce, docker-ce-cli, containerd.io, docker-buildx-plugin, docker-compose-plugin, backup-to-ssh
+Breaks: setup-montana, setup-ohio
+Filename: pool/main/setup-nevada_0.1-1_all.deb
+Size: 12188
+MD5sum: b3a97e0a89d2cc601697a5afea43c241
+SHA1: 9123b03eb0a9728b667b63a5da57a6d3008d3cb4
+SHA256: e4abd1c6d0c9ed0b4ee03dea1a46b4a76b2004430766459e4718edd357612587
+SHA512: d8a54af565b8e957c9e034dff1df0d345d308c669c08c1ab06592192c8b3d2758b0abcfafb502b245c7329bc2cf9667da145e6a70164e81c2d3aff8ba4bddf12
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install nevada.ajalo.com.
+ multiline
+ description
+
+Package: setup-ohio
+Architecture: all
+Version: 0.1-1
+Priority: optional
+Section: unknown
+Maintainer: admin <no@mail.plz>
+Installed-Size: 64
+Depends: systemd, iptables, ipset, ddns-afraid-org, prometheus, prometheus-alertmanager, nginx, prometheus-nginx-exporter, prometheus-node-exporter, exim4, whois, openssl, backup-to-ssh
+Breaks: setup-montana, setup-nevada
+Filename: pool/main/setup-ohio_0.1-1_all.deb
+Size: 10380
+MD5sum: c6a24fcfb1e94784402c73f101e84458
+SHA1: 09d5aea1f694cabc771966b6c842b3948d5364b7
+SHA256: 4f2d32f488054206a6cd8232f9d29bf826a270e74db7fc081d22e86bbe416bf5
+SHA512: cd736abef45581a70f1af6a2a323ea504dd80b8f0ef43c5d741da6c124a290f8cec5d684dc895765aba314d274be76ab54e952ffdcf6e390a4071ced20c37861
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install ohio.ajalo.com.
+ multiline
+ description
+

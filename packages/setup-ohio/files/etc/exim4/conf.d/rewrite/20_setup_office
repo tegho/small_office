@@ -1,0 +1,9 @@
+.ifndef NO_EAA_REWRITE_REWRITE
+*@+local_domains "${lookup{${local_part}}wildlsearch{/etc/email-addresses}\
+                   {$value}fail}" Ffrsw
+# identical rewriting rule for /etc/mailname
+*@ETC_MAILNAME "${lookup{${local_part}}wildlsearch{/etc/email-addresses}\
+                   {$value}fail}" Ffrsw
+.endif
+
+

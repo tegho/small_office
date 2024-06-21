@@ -1,0 +1,13 @@
+Package: setup-ohio
+Version: 0.1-1
+Architecture: all
+Maintainer: admin <no@mail.plz>
+Installed-Size: 64
+Depends: systemd, iptables, ipset, ddns-afraid-org, prometheus, prometheus-alertmanager, nginx, prometheus-nginx-exporter, prometheus-node-exporter, exim4, whois, openssl, backup-to-ssh
+Breaks: setup-montana, setup-nevada
+Section: unknown
+Priority: optional
+Homepage: https://github.com/tegho/small_office_vpn
+Description: Install ohio.ajalo.com.
+ multiline
+ description

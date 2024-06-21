@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+case "$1" in
+    configure)
+        find /etc/ddns-afraid-org.d -type f -exec chmod -f 640 '{}' \;
+        find /etc/ddns-afraid-org.d -type d -exec chmod -f 750 '{}' \;
+
+        systemctl daemon-reload && \
+        deb-systemd-invoke enable ddns-afraid-org.service && \
+        deb-systemd-invoke enable ddns-afraid-org.timer && \
+        deb-systemd-invoke restart ddns-afraid-org.service && \
+        deb-systemd-invoke restart ddns-afraid-org.timer
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+exit 0
