@@ -15,6 +15,7 @@ dh binary
    create-stamp debian/debhelper-build-stamp
    dh_prep
    dh_auto_install --destdir=debian/my-repo/
+   dh_install
    dh_installdocs
    dh_installchangelogs
    dh_perl
@@ -45,9 +46,9 @@ E: my-repo: bogus-mail-host-in-debian-changelog no@mail.plz version 0.1-1 (line 
 E: my-repo: changelog-is-dh_make-template
 E: my-repo: copyright-contains-dh_make-todo-boilerplate
 E: my-repo: helper-templates-in-copyright
+E: my-repo: package-installs-apt-sources etc/apt/sources.list.d/my-repo.list
 E: my-repo: section-is-dh_make-template
 W: my-repo: copyright-has-url-from-dh_make-boilerplate
-W: my-repo: empty-binary-package
 W: my-repo: initial-upload-closes-no-bugs
 W: my-repo: wrong-bug-number-in-closes #nnnn in the installed changelog (line 3)
 Finished running lintian.

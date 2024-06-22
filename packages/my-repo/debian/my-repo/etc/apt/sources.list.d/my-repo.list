@@ -1,0 +1,1 @@
+deb [arch=amd64 signed-by=/etc/apt/keyrings/my-repo.gpg] http://tegho.github.io/small_office_vpn/apt-repo stable main

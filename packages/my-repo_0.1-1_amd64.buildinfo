@@ -4,14 +4,14 @@ Binary: my-repo
 Architecture: all
 Version: 0.1-1
 Checksums-Md5:
- c3c38b2de2ba73d34be02300554dd15c 2098 my-repo_0.1-1_all.deb
+ 48562fc1d8c1761a7962a0eb47f8bcce 2624 my-repo_0.1-1_all.deb
 Checksums-Sha1:
- 5fd903bf887bb612c00e831d5829c697fc1e1d48 2098 my-repo_0.1-1_all.deb
+ 1a290a403aadd72fd19ffe6fca3e67b432097a7d 2624 my-repo_0.1-1_all.deb
 Checksums-Sha256:
- 7fefb56359a5d1434d3b1b8c6809613fc080f033987e78fc333ed6b1d16a6673 2098 my-repo_0.1-1_all.deb
+ 3d7c614f0c82f95d37efd14052786db39231de01f4faa1d74afd4aaebec83548 2624 my-repo_0.1-1_all.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Sat, 22 Jun 2024 02:56:02 +0300
+Build-Date: Sat, 22 Jun 2024 03:23:08 +0300
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -182,4 +182,4 @@ Environment:
  LC_PAPER="ru_RU.UTF-8"
  LC_TELEPHONE="ru_RU.UTF-8"
  LC_TIME="ru_RU.UTF-8"
- SOURCE_DATE_EPOCH="1719014158"
+ SOURCE_DATE_EPOCH="1719015685"

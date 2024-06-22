@@ -11,7 +11,7 @@ cd "$package_dir"
 sed -i 's!^Depends: .*!Depends: '"$package_depends"'!' "$package_dir/debian/control"
 
 #######################
-#cp "$current_dir/postinst" "$current_dir/postrm" "$current_dir/prerm" "$current_dir/install" "$package_dir/debian"
+cp "$current_dir/install" "$package_dir/debian"
 #######################
 
 debuild -i -us -uc -b

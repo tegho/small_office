@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Sat, 22 Jun 2024 02:55:58 +0300
+Date: Sat, 22 Jun 2024 03:21:25 +0300
 Source: my-repo
 Binary: my-repo
 Built-For-Profiles: noudeb
@@ -16,11 +16,11 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- 5fd903bf887bb612c00e831d5829c697fc1e1d48 2098 my-repo_0.1-1_all.deb
- 0c8a9eb9362c730db96eedfc3c967a83b4b5c2ac 5935 my-repo_0.1-1_amd64.buildinfo
+ 1a290a403aadd72fd19ffe6fca3e67b432097a7d 2624 my-repo_0.1-1_all.deb
+ 7743446c988f3f4f387789d9435c4dacb2e397b2 5935 my-repo_0.1-1_amd64.buildinfo
 Checksums-Sha256:
- 7fefb56359a5d1434d3b1b8c6809613fc080f033987e78fc333ed6b1d16a6673 2098 my-repo_0.1-1_all.deb
- 42331534bc0e3c8278cf19c7ec980a957b4c395a5d6c5c58038c99b20cc739c4 5935 my-repo_0.1-1_amd64.buildinfo
+ 3d7c614f0c82f95d37efd14052786db39231de01f4faa1d74afd4aaebec83548 2624 my-repo_0.1-1_all.deb
+ 9b8f86114ee675dc0a6827dd1a05f7e02d3b4216e222f131b98d497503ea30e3 5935 my-repo_0.1-1_amd64.buildinfo
 Files:
- c3c38b2de2ba73d34be02300554dd15c 2098 unknown optional my-repo_0.1-1_all.deb
- a9361e2a237abec36452670da5896192 5935 unknown optional my-repo_0.1-1_amd64.buildinfo
+ 48562fc1d8c1761a7962a0eb47f8bcce 2624 unknown optional my-repo_0.1-1_all.deb
+ 445234dabdd345a8022a56963f15e82f 5935 unknown optional my-repo_0.1-1_amd64.buildinfo
